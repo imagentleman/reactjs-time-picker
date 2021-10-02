@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Example Page</title>
+    <link href="styles.css" rel="stylesheet" />
+    <style>
+      .timepicker {
+        padding: 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -19,7 +25,7 @@
       data-type="module"
       data-plugins="transform-modules-umd"
       data-presets="react"
-      src="./index.js"
+      src="index.js"
     ></script>
 
     <script
@@ -30,9 +36,12 @@
     >
       import TimePicker from "index.js";
 
-      console.log(TimePicker);
+      const className = "timepicker";
 
-      ReactDOM.render(<TimePicker />, document.getElementById("root"));
+      ReactDOM.render(
+        <TimePicker className={className} />,
+        document.getElementById("root")
+      );
     </script>
   </body>
 </html>
