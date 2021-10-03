@@ -2,7 +2,7 @@ const generateList = (start, end, step) => {
   let list = [];
 
   for (let i = start; i <= end; i = i + step) {
-    list.push(i);
+    list.push(i.toString().padStart(2, "0"));
   }
 
   return list;
