@@ -1,3 +1,20 @@
 .reactjs-time-picker {
   position: relative;
 }
+
+.reactjs-time-picker__list {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  overflow: auto;
+}
+
+.reactjs-time-picker__dropdown {
+  display: flex;
+}
+
+.reactjs-time-picker__button {
+  appearance: none;
+  border: 0;
+  padding: 8px 16px;
+}
