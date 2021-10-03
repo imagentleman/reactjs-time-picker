@@ -1,8 +1,12 @@
+const leftPad = (number) => {
+  return number.toString().padStart(2, "0");
+};
+
 const generateList = (start, end, step) => {
   let list = [];
 
   for (let i = start; i <= end; i = i + step) {
-    list.push(i.toString().padStart(2, "0"));
+    list.push(leftPad(i));
   }
 
   return list;
@@ -32,9 +36,21 @@ const TimePicker = (props) => {
     setIsOpen(!isOpen);
   };
 
+  const handleSelection = (hour, minute) => {
+    setSelectedHour(hour);
+    setSelectedMinute(minute);
+  };
+
   React.useEffect(() => {
-    if ((selectedHour, selectedMinute)) {
-      setSelectedtime(`${selectedHour}:${selectedMinute}`);
+    const formattedHour = selectedHour
+      ? leftPad(selectedHour)
+      : leftPad(hourStart);
+    const formattedMinute = selectedMinute
+      ? leftPad(selectedMinute)
+      : leftPad(minuteStart);
+
+    if (selectedHour !== undefined || selectedMinute !== undefined) {
+      setSelectedtime(`${formattedHour}:${formattedMinute}`);
     }
   }, [selectedHour, selectedMinute]);
 
@@ -55,7 +71,7 @@ const TimePicker = (props) => {
                 <button
                   key={hour}
                   className="reactjs-time-picker__button"
-                  onClick={() => setSelectedHour(hour)}
+                  onClick={() => handleSelection(hour, selectedMinute)}
                 >
                   {hour}
                 </button>
@@ -69,7 +85,7 @@ const TimePicker = (props) => {
                 <button
                   key={minute}
                   className="reactjs-time-picker__button"
-                  onClick={() => setSelectedMinute(minute)}
+                  onClick={() => handleSelection(selectedHour, minute)}
                 >
                   {minute}
                 </button>
