@@ -54,6 +54,38 @@ const TimePicker = (props) => {
     }
   }, [selectedHour, selectedMinute]);
 
+  React.useEffect(() => {
+    const pickerStyle = document.querySelector("#reactjs-time-picker");
+
+    if (!pickerStyle) {
+      var style = document.createElement("style");
+      style.id = "reactjs-time-picker";
+      style.innerHTML = `
+        .reactjs-time-picker {
+          position: relative;
+        }
+        
+        .reactjs-time-picker__list {
+          display: flex;
+          flex-direction: column;
+          height: 240px;
+          overflow: auto;
+        }
+        
+        .reactjs-time-picker__dropdown {
+          display: flex;
+        }
+        
+        .reactjs-time-picker__button {
+          appearance: none;
+          border: 0;
+          padding: 8px 16px;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
   return (
     <div className={`reactjs-time-picker ${className}`}>
       <input
