@@ -1,0 +1,28 @@
+{
+  "name": "reactjs-time-picker",
+  "version": "1.0.0",
+  "description": "Unstyled, customizable and lightweight reactjs time picker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagentleman/reactjs-time-picker.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "time",
+    "picker",
+    "timepicker",
+    "time-picker",
+    "input"
+  ],
+  "author": "imagentleman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imagentleman/reactjs-time-picker/issues"
+  },
+  "homepage": "https://github.com/imagentleman/reactjs-time-picker#readme"
+}
