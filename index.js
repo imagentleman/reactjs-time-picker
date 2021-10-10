@@ -1,3 +1,5 @@
+import React from "react";
+
 const leftPad = (number) => {
   return number.toString().padStart(2, "0");
 };
