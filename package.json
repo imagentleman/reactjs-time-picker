@@ -1,6 +1,6 @@
 {
   "name": "@imagentleman/reactjs-time-picker",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Unstyled, customizable and lightweight reactjs time picker.",
   "main": "dist/index.js",
   "scripts": {
