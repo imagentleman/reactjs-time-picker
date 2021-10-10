@@ -38,7 +38,12 @@
       const className = "timepicker";
 
       ReactDOM.render(
-        <TimePicker className={className} closeOnClickOutside />,
+        <TimePicker
+          className={className}
+          inputProps={{ id: "timepicker" }}
+          onChange={console.log}
+          closeOnClickOutside
+        />,
         document.getElementById("root")
       );
     </script>
