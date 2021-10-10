@@ -12,7 +12,7 @@
 
 ```
 import React, {useState} from 'react';
-import TimePicker from "index.js";
+import TimePicker from "@imagentleman/reactjs-time-picker";
 
 ReactDOM.render(
   <TimePicker
