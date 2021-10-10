@@ -4,6 +4,10 @@
 
 [https://imagentleman.github.io/reactjs-time-picker/](https://imagentleman.github.io/reactjs-time-picker/)
 
+## Package
+
+[https://www.npmjs.com/package/@imagentleman/reactjs-time-picker](https://www.npmjs.com/package/@imagentleman/reactjs-time-picker)
+
 ## Usage
 
 ```
@@ -27,3 +31,7 @@ ReactDOM.render(
 | inputProps | Object with properties to be added to the input |
 | onChange | Callback for the change event |
 | closeOnClickOutside | Optional attribute to close the picker when clicking outside of it |
+
+## Installation
+
+`npm i @imagentleman/reactjs-time-picker`
