@@ -1,5 +1,5 @@
 {
-  "name": "reactjs-time-picker",
+  "name": "@imagentleman/reactjs-time-picker",
   "version": "1.0.0",
   "description": "Unstyled, customizable and lightweight reactjs time picker.",
   "main": "index.js",
