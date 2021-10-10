@@ -22,6 +22,7 @@ const TimePicker = (props) => {
     minuteEnd = 59,
     minuteStep = 1,
     inputProps,
+    onChange,
     closeOnClickOutside,
   } = props;
 
@@ -60,6 +61,10 @@ const TimePicker = (props) => {
 
     if (selectedHour !== undefined || selectedMinute !== undefined) {
       setSelectedtime(`${formattedHour}:${formattedMinute}`);
+
+      if (onChange) {
+        onChange(`${formattedHour}:${formattedMinute}`);
+      }
     }
   }, [selectedHour, selectedMinute]);
 
