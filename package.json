@@ -1,10 +1,12 @@
 {
   "name": "@imagentleman/reactjs-time-picker",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "description": "Unstyled, customizable and lightweight reactjs time picker.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && NODE_ENV=production babel ./index.js --out-dir dist --copy-files",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,15 @@
   "bugs": {
     "url": "https://github.com/imagentleman/reactjs-time-picker/issues"
   },
-  "homepage": "https://github.com/imagentleman/reactjs-time-picker#readme"
+  "homepage": "https://github.com/imagentleman/reactjs-time-picker#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }

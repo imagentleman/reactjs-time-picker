@@ -4,58 +4,26 @@
 
 [https://imagentleman.github.io/reactjs-time-picker/](https://imagentleman.github.io/reactjs-time-picker/)
 
-## Example
+## Usage
 
 ```
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example Page</title>
-    <style>
-      .timepicker {
-        padding: 20px;
-      }
-    </style>
-  </head>
+import React, {useState} from 'react';
+import TimePicker from "index.js";
 
-  <body>
-    <div id="root"></div>
-
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
-
-    <script
-      type="text/babel"
-      data-type="module"
-      data-plugins="transform-modules-umd"
-      data-presets="react"
-      src="index.js"
-    ></script>
-
-    <script
-      type="text/babel"
-      data-type="module"
-      data-plugins="transform-modules-umd"
-      data-presets="react"
-    >
-      import TimePicker from "index.js";
-
-      const className = "timepicker";
-
-      ReactDOM.render(
-        <TimePicker
-          className={className}
-          inputProps={{ id: "timepicker" }}
-          onChange={console.log}
-          closeOnClickOutside
-        />,
-        document.getElementById("root")
-      );
-    </script>
-  </body>
-</html>
+ReactDOM.render(
+  <TimePicker
+    className={"my-time-picker-css"}
+    inputProps={{ id: "timepicker" }}
+    onChange={(value) => console.log(value)}
+    closeOnClickOutside
+  />,
+  document.getElementById("root")
+);
 ```
+
+| Prop | Description |
+| --- | --- |
+| className | CSS class that overrides the main container styles |
+| inputProps | Object with properties to be added to the input |
+| onChange | Callback for the change event |
+| closeOnClickOutside | Optional attribute to close the picker when clicking outside of it |
