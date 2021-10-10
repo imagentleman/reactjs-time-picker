@@ -22,12 +22,15 @@ const TimePicker = (props) => {
     minuteEnd = 59,
     minuteStep = 1,
     inputProps,
+    closeOnClickOutside,
   } = props;
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedHour, setSelectedHour] = React.useState();
   const [selectedMinute, setSelectedMinute] = React.useState();
   const [selectedTime, setSelectedtime] = React.useState("");
+
+  const containerRef = React.useRef();
 
   const hours = generateList(hourStart, hourEnd, hourStep);
   const minutes = generateList(minuteStart, minuteEnd, minuteStep);
@@ -39,6 +42,12 @@ const TimePicker = (props) => {
   const handleSelection = (hour, minute) => {
     setSelectedHour(hour);
     setSelectedMinute(minute);
+  };
+
+  const handleClickOutside = (e) => {
+    if (containerRef.current.contains(e.target)) return;
+
+    setIsOpen(false);
   };
 
   React.useEffect(() => {
@@ -84,10 +93,20 @@ const TimePicker = (props) => {
       `;
       document.head.appendChild(style);
     }
+
+    if (closeOnClickOutside) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      if (closeOnClickOutside) {
+        document.removeEventListener("click", handleClickOutside);
+      }
+    };
   }, []);
 
   return (
-    <div className={`reactjs-time-picker ${className}`}>
+    <div className={`reactjs-time-picker ${className}`} ref={containerRef}>
       <input
         {...inputProps}
         onClick={toggleDropdown}
