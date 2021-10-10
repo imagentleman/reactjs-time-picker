@@ -35,3 +35,7 @@ ReactDOM.render(
 ## Installation
 
 `npm i @imagentleman/reactjs-time-picker`
+
+## Size
+
+[1kB](https://bundlephobia.com/package/@imagentleman/reactjs-time-picker) minified + gzipped
